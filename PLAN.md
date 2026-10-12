@@ -2,15 +2,15 @@
 
 A mod for Claude Code. A small volleyball game in the style of Blobby Volley appears in the band above the prompt while Claude works on a turn, so waiting time becomes play time.
 
-* Status: design finished on 2026-10-06. M0 (project setup) done on 2026-10-06. M1 (prototypes P1 and P2) done on 2026-10-06: architecture A is chosen. D3 widened on 2026-10-06: held keys also on WSL, Linux and macOS (section 11). M2 (P4 on Windows) done on 2026-10-06: held keys pass on Windows. M3 (core) done on 2026-10-06. M4 (drawing) done on 2026-10-06. D3 changed on 2026-10-06 by the user: WASD is the only movement and the mouse only clicks, so M6's key work moved into M5; taps were tried and dropped, and where no key helper runs there is no game. M5 (play with WASD) done on 2026-10-06. M7 (turn lifecycle) done on 2026-10-07. M8 (persistence and command) done on 2026-10-07: the standing and the record live in `$.store`, `/volley` has all its forms, and the mod loads in every session on this machine (D12). M2b waits on the rounds on the other machines; M9 is next. M9 (AI levels) is built since 2026-10-09 and waits for the user's verdict on easy and hard before its tick (section 9). On 2026-10-12 WSL passed its M2b round and held keys ship there; the mod loads in WSL sessions too, with the standing shared (section 4). Also on 2026-10-12 the blobs got a new look, round jelly that wobbles as it walks, which the user chose to keep (section 11). Later that day M10's first part was built: eyes that follow the ball, the countdown and the final score as the message line pulsing with each beat (big digits were tried first and were too much for the user), the winner hopping on the win screen, hints that fit the narrowest court, and the tuning sheet `tools/tune.ts`. The user then found easy and hard working well, saw a level changed in `/config` show on the score row, and found the feel good with the constants as they are, so **M9 and M10 are done on 2026-10-12** (section 9). **M11 (release preparation) is done on 2026-10-12** too: version 1.0.0, `README.md`, the marketplace file, and the AI under a name for each level, Pudding, Jelly and Gummy (the user's choice; 3.2, section 11). Every milestone but M2b is ticked; M2b still waits on the CachyOS round and the friend. For the public repo the user settled three points the same day: the mod is renamed from Claudey Volley to **Wobbly Volley** (D11), the license is MIT, and this file was cleaned for release, with the history starting anew at one release commit in a new repo (section 11). **The repo went public the same day: Wobbly Volley 1.0.0 is released** at `kopylow/wobbly-volley`.
-* All API facts in this file were checked against Claude Code **2.1.291**. On 2.1.292 (2026-10-06) the types' text on what M5 uses is unchanged, and on 2.1.295 (2026-10-09) what M9 uses reads the same (section 11). M10 uses no API the earlier milestones did not, and passes on 2.1.296 (2026-10-12). M11 read the facts on sharing again in the reference of 2.1.296 (5.1 rows 30 and 87), and before the release in the public docs (row 88).
+* Status: design finished on 2026-10-06. M0 (project setup) done on 2026-10-06. M1 (prototypes P1 and P2) done on 2026-10-06: architecture A is chosen. D3 widened on 2026-10-06: held keys also on WSL, Linux and macOS (section 11). M2 (P4 on Windows) done on 2026-10-06: held keys pass on Windows. M3 (core) done on 2026-10-06. M4 (drawing) done on 2026-10-06. D3 changed on 2026-10-06 by the user: WASD is the only movement and the mouse only clicks, so M6's key work moved into M5; taps were tried and dropped, and where no key helper runs there is no game. M5 (play with WASD) done on 2026-10-06. M7 (turn lifecycle) done on 2026-10-07. M8 (persistence and command) done on 2026-10-07: the standing and the record live in `$.store`, `/volley` has all its forms, and the mod loads in every session on this machine (D12). M2b waits on the rounds on the other machines; M9 is next. M9 (AI levels) is built since 2026-10-09 and waits for the user's verdict on easy and hard before its tick (section 9). On 2026-10-12 WSL passed its M2b round and held keys ship there; the mod loads in WSL sessions too, with the standing shared (section 4). Also on 2026-10-12 the blobs got a new look, round jelly that wobbles as it walks, which the user chose to keep (section 11). Later that day M10's first part was built: eyes that follow the ball, the countdown and the final score as the message line pulsing with each beat (big digits were tried first and were too much for the user), the winner hopping on the win screen, hints that fit the narrowest court, and the tuning sheet `tools/tune.ts`. The user then found easy and hard working well, saw a level changed in `/config` show on the score row, and found the feel good with the constants as they are, so **M9 and M10 are done on 2026-10-12** (section 9). **M11 (release preparation) is done on 2026-10-12** too: version 1.0.0, `README.md`, the marketplace file, and the AI under a name for each level, Pudding, Jelly and Gummy (the user's choice; 3.2, section 11). Every milestone but M2b is ticked; M2b still waits on the CachyOS round and the friend. For the public repo the user settled three points the same day: the mod is renamed from Claudey Volley to **Wobbly Volley** (D11), the license is MIT, and this file was cleaned for release, with the history starting anew at one release commit in a new repo (section 11). **The repo went public the same day: Wobbly Volley 1.0.0 is released** at `kopylow/wobbly-volley`. Later on 2026-10-12 the user settled **online play for version 2** (D14 to D22): section 13 designs it, and milestones M12 to M21 build it. None of them is started.
+* All API facts in this file were checked against Claude Code **2.1.291**. On 2.1.292 (2026-10-06) the types' text on what M5 uses is unchanged, and on 2.1.295 (2026-10-09) what M9 uses reads the same (section 11). M10 uses no API the earlier milestones did not, and passes on 2.1.296 (2026-10-12). M11 read the facts on sharing again in the reference of 2.1.296 (5.1 rows 30 and 87), and before the release in the public docs (row 88). The facts for online play (5.1 rows 89 to 91) come from the types of 2.1.296 (2026-10-12).
 * Project folder: `C:\projects\ClaudeyVolley` (the mod sits at its root).
 
 ---
 
 ## 0. Start here (for a session that starts cold)
 
-1. Read this whole file once. Sections 3 (decisions) and 6 (architecture) are binding.
+1. Read this whole file once. Sections 3 (decisions) and 6 (architecture) are binding, and from M12 on section 13 (online play) as well.
 2. Load the `plugin-authoring` skill with the Skill tool and read its `reference.md`. The skill names the path of the types file `claude-code.d.ts`. Its first line names the build that wrote it.
    * The skill tells you to write mods into a session folder under `~\.claude\dev-mods\`. **Ignore that for this project.** The mod lives in the project folder and loads from there (D12). If the engine asks "Enable hot reloading for this session?", the answer does not matter for this project.
 3. If that build is not 2.1.291, check the facts in section 5 again before relying on them (grep each name in the types file, run `claude plugin test .`). Write what changed into section 11.
@@ -46,7 +46,7 @@ Rules for this file:
 
 **Explicitly left out of version 1**
 
-* Multiplayer of any kind (see section 12 for notes).
+* Multiplayer of any kind. Version 2 adds online play (section 13).
 * Sound.
 * The desktop Code tab, VS Code and mobile (the mod draws nothing there).
 * A docked side pane variant.
@@ -70,6 +70,17 @@ Rules for this file:
 * **Kit**: the test kit behind `claude plugin test`.
 * **Claude**: in the code and in this file the AI's side (`claude`, the orange blob on the right). On the court the AI goes by its level's name since M11: Pudding (easy), Jelly (medium), Gummy (hard). The only "Claude" a player still reads is Claude Code itself, in the marker of D5.
 
+For online play (section 13):
+
+* **Lobby**: the public ntfy.sh topic where waiting players find each other (13.6).
+* **Code**: a player's friend code, which is also their ID, such as `4F2K-M9XD-7QAB` (13.5).
+* **Nickname**: the name a player shows to their opponents (13.5).
+* **Meeting**: the time two players are connected and play. A match may take several meetings (D17).
+* **Seat**: which side of the sim a player has in a meeting; the one whose code sorts first has `you` (13.10).
+* **Rival**: a person one has played; the standing against them and the record are kept (13.12).
+* **Net helper**: `helper/net.ps1` or `helper/net.py`, the process that talks to the network and runs the key helper as its child (13.9).
+* **Step line**: an `S` line of the net helper, one step of a meeting with both players' inputs (13.8).
+
 ---
 
 ## 3. Decisions
@@ -91,6 +102,15 @@ Rules for this file:
 | D11 | Name and sharing | Mod name `wobbly-volley`, shown as "Wobbly Volley", command `/volley`. Git from the first milestone, a private repo, marketplace file and README in the last milestone, public when the user decides; the public repo is `kopylow/wobbly-volley`. Until the release on 2026-10-12 the mod was called Claudey Volley (`claudey-volley`); the user renamed it before the first public install, and this file uses the new name throughout, in older entries too (section 11). | The build spans several sessions, so history and backup pay at once. Going public stays a one step decision. The name rhymes with Blobby Volley and names the blobs' wobble, and it stays clear of Claude's name, which Anthropic asks third party products not to build on. |
 | D12 | Loading | While building: sessions start through `dev.ps1`, which runs `claude --plugin-dir C:\projects\ClaudeyVolley`. Once the game is playable (end of M8): the folder goes into `CLAUDE_CODE_PLUGIN_DIRS` in the `env` block of the user's `~\.claude\settings.json`. | A half built game never disturbs real work sessions. |
 | D13 | Finish | Core plus light polish (see section 1). | Feels like a real game without delaying the first playable build. |
+| D14 | Online play and matchmaking (version 2) | Players are matched with people automatically, in a public lobby. Personal friend codes can be exchanged, and friends are matched first (the user, 2026-10-12). | The user wants automatic matchmaking and a friend system. |
+| D15 | No server of our own | Matchmaking runs over a free public service, ntfy.sh (13.6). The game runs directly between the two players: peer to peer over UDP, with public STUN servers for hole punching (13.7). The user accepted a third party as the meeting point (2026-10-12). | Server capacity is small or none. A free meeting point costs nothing to run, and the game's traffic never passes through it. |
+| D16 | Bound to the waiting time | The court opens during turns as in version 1, and you play the AI until a person is found; that match then takes the AI's place (the user, 2026-10-12). | Waiting time stays play time, and an empty lobby costs nothing, since the AI is always there. |
+| D17 | Leaving and meeting again | When one player's turn ends (their Claude is done), the match is saved on both sides. When the same two meet again, the saved standing is loaded and the match goes on. Statistics are kept per opponent, by their ID (the user, 2026-10-12). | Two players rarely wait at the same time for long, so a match must survive many short meetings. |
+| D18 | Every system | Online play works on Windows, WSL, Linux and macOS, and between any two of them (the user, 2026-10-12). | The user's wish. The simulation computes the same on every system (6.3), and both helper languages follow one contract (13.9). |
+| D19 | Nicknames | Every player has a nickname, which the opponent sees on the court (the user, 2026-10-12). | The user's wish; a friend code is no name. |
+| D20 | Opt in | Online play is a row in `/config`, off by default (the designer's recommendation, accepted by the user on 2026-10-12). | Version 1 promised that nothing opens a network connection, and in the lobby a player meets strangers who see their address. |
+| D21 | Pause limit | A pause in a meeting that lasts longer than 15 seconds counts as leaving: the match is saved as after a turn end (the designer's recommendation, accepted by the user on 2026-10-12). | A dialog or a glance elsewhere must not end a meeting, and a player who has gone must not hold the other one. |
+| D22 | Helpers for online play | The network part is written twice: in PowerShell for Windows and WSL, in Python for Linux and macOS. On macOS online play needs a real `python3` (the Xcode command line tools or an install of its own); play against the AI does not (the designer's recommendation, accepted by the user on 2026-10-12, and refined the same day so that the key helpers stay as they are, 13.9). | JXA has no plain UDP socket, and one compiled binary for all systems would break the README's promise that the helpers can be read (13.15). |
 
 ### 3.2 Defaults set by the designer (not asked, the user may change them)
 
@@ -116,6 +136,20 @@ Rules for this file:
 * The look of M10 (the user's choices, 2026-10-12): each eye is two white pixels side by side, and the pupil takes the one on the ball's side. The countdown and the win screen keep their message line as before ("3", "You win 11 : 7"), and it pulses: in each beat of 0.5 s it is drawn bold for a third, plain for a third and dim for a third (big digits were the first choice, and on sight the user found them too much). For the win screen's 3 s the winner hops, a hop per beat, and the loser lies flat. The other messages stay still.
 * The hint row says, by phase (M10, set by the designer): before the first click "Click to play. A and D run, W jumps; hold W to jump higher."; in play "A and D run, W jumps. Esc once hands the keys to the prompt."; paused "Click to resume. /volley hides the court."; on the win screen "Click for the next match. /volley hides the court."; while the helper is not trusted "Waiting for the key helper; then A and D run, W jumps."; and the marker of D5 after a turn end. Each fits the narrowest court, 60 columns.
 * At a turn end only a rally plays out (D5): a court in its countdown, its point display or its win screen closes at once. The marker is the hint row in bold orange. `enabled` switched off in `/config` while a court that opened by itself shows closes it at the reload the change brings; a `/volley` court stays (M7).
+
+Online play (section 13), set by the designer on 2026-10-12; the user may change them:
+
+* `online` is a picker: `off`, `friends` (matched with friends only) and `everyone` (friends first, then anyone) (13.13).
+* Only a court that opened by itself in a turn enters the lobby. A court opened with `/volley` plays the AI only, since D16 binds online play to the waiting time (13.6).
+* The pairing order: friends, then players one has an unfinished match with, then everyone else, the longest waiting first (13.6).
+* Each player sees themself on the left in blue and the opponent on the right in orange. The opponent's nickname, or a friend's label, takes the AI's name on the score row, and the ping stands beside it (13.11).
+* The match's width is the smaller of the two courts', and in a new match the `you` seat serves first in odd numbered matches (13.10).
+* After a meeting, and after the win screen within one, play goes on with the countdown and no click: the keyboard is still the court's (13.10).
+* The nickname follows one rule, and until a player sets one it is "Blob" and the first four characters of their code (13.5).
+* `/volley block` ends a meeting under way at once (13.5).
+* Of the rivals who are not friends, the store keeps the 100 met last (13.12).
+* The lobby's pacing: a poll every 6 s, at most 200 messages a day per machine, one searching session per machine (13.6).
+* The times: an offer runs out after 15 s, punching after 10 s, the AI rally before a meeting after 10 s, the wait for the other side's start after 15 s, a silent connection after 3 s; a candidate who let an offer run out is skipped for 2 minutes, a pair that failed to connect for 10 (13.6 to 13.10).
 
 ---
 
@@ -262,6 +296,9 @@ Source marks: **T** = declaration and doc comment in the types file of build 2.1
 | 86 | In the kit a band hook may read `$.store` while drawing. The test's `$` has no `ui.message`; `band.post(data, { in })` posts as the `Client` would, and the hooks module's answer reaches it. | K (2026-10-07) |
 | 87 | `claude plugin validate <folder>` reads `.claude-plugin/marketplace.json` in the same run as the manifest and the module, and passes with `--strict` too on a manifest that carries `displayName`, `homepage`, `repository`, `keywords` and an author `url`. `claude plugin marketplace add <folder>` and `claude plugin install <name>@<marketplace>` install from a folder; such a plugin is read from that folder, not from a copy (`claude plugin list` says `Read from:`), while an install from a repository runs a copy under `<config folder>\plugins\cache\<marketplace>\<name>\<version>\`. With `CLAUDE_CONFIG_DIR` set to an empty folder both commands and a headless `claude -p "/volley"` touch that folder alone. | R, K, M (2026-10-12) |
 | 88 | The docs describe the API of this section in public (code.claude.com/docs/en/plugins/mods/overview and the pages beside it): hooks modules, events, the mods API, the test kit. Mods are on by default, in the terminal from 2.1.287 and in the desktop app from 2.1.286, and `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS`, the switch of the early access, is ignored since. Publishing through one's own marketplace needs no submission: with `marketplace.json` in the repository the plugin is published, for everyone who can clone the repository. With `version` set, `claude plugin update` gives users a new copy only when it changed. A published plugin's `name` is permanent for its installs, and a `renames` map in the marketplace file migrates them. `claude plugin tag` makes a `{name}--v{version}` tag, needed only when other plugins declare a version range on this one. The install line with `--marketplace` needs 2.1.275 at the prompt and 2.1.292 from the shell (`claude plugin install <name> --marketplace <owner>/<repo>`). `claude plugin validate` also holds a plugin's name against Anthropic's own (an error for a name that starts with `claude-`, `anthropic-` or `cc-plugin-`, a warning for `claude` or `anthropic` as a whole word elsewhere); `wobbly-volley` draws neither. | D (2026-10-12) |
+| 89 | The `crypto` global of hooks and surface modules declares `subtle.digest`, `randomUUID` and `getRandomValues`, nothing more: no key generation, key agreement, signing or encryption. The module may hold more at run time, but the types are the authority, so online play brings TweetNaCl (13.5). | T (2.1.296, 2026-10-12) |
+| 90 | `$.http.fetch(url, { method, headers, body, auth, socketPath })` goes through the host, http or https to whatever the host reaches unless the organization's web-fetch policy refuses it. The body is text, and the call resolves `{ status, ok, headers, text }` (header names in lower case) once the whole body is read. Its options have no timeout and no abort signal. | T (2.1.296, 2026-10-12) |
+| 91 | `$.fs.write(path, text)` writes the whole file and makes its folders as needed; an absolute path is used as given, a relative one from the working directory. A write over 4 MiB rejects, and so does a network location. Where a plugin may write is an `fs.*` hook's to say. | T (2.1.296, 2026-10-12) |
 
 Kit quirks found:
 
@@ -280,6 +317,14 @@ P1 and P2 answered the band, clock, pointer, keyboard, Esc, `[-]`, dialog and dr
 * Whether `$.process.spawn` starts `powershell.exe` from a Linux session, which the WSL route needs (M2b). From a bash in WSL it works, and the helper's walk reaches `WindowsTerminal.exe` through the session's `wsl.exe` (section 10). Through `$.process.spawn` not checked yet.
 * How the mod can tell a session nobody sees from the one the person looks at (5.1 rows 50 and 56). Being run by the daemon is not the test: P4 showed such a session in use, and `isInteractive` of `session.start` is true under every REPL (T, 2.1.292). Since M5 the question is smaller on Windows: in a session the daemon runs the helper finds no window and writes `E nowindow`, and the band then draws one line in place of the court, so no court should run there for longer than the helper's start (about a second). Since M7 the court opens by itself, so a long turn in such a session opens one too; the same line follows. Expected from P4 and the kit test, not yet seen in a real background session. Such sessions came from ← on an empty prompt (5.1 row 71); on 2026-10-07 `leftArrowOpensAgents` was `false` in `~/.claude.json` and no `--bg-pty-host` session ran on this machine.
 * Whether a `Raster` stacked over a `Client` lets the pointer through (only for fallback B, which is not being built).
+
+Open for online play (section 13):
+
+* Whether a `$.http.fetch` that gets no answer ever ends, and how long it holds a hook or a loop that waits on it (row 90 names no timeout). P6.
+* Whether `$.http.fetch` to ntfy.sh meets any prompt or policy in a plain session. P6.
+* Whether a hooks module loads a vendored ES module the size of TweetNaCl, whether validate accepts it, and how fast `nacl.box` runs there. P6.
+* Whether `$.fs.write` may write into the system's temp folder, and from WSL through `/mnt/c`, and how soon a helper that watches the file sees the write. P5.
+* Whether a kit test can answer `http.fetch` and `fs.write` with hooks of its own, as it answers `process.spawn` (row 72). M15 and M16.
 
 ---
 
@@ -303,6 +348,7 @@ This section describes architecture A. Prototype P2 passed on 2026-10-06 (sectio
 * The **surface module** owns the running game: it steps the simulation, asks the input sources, and draws.
 * The **hooks module** owns everything around it: when the court is shown, the standing between turns and sessions, the command, the settings, and the helper process.
 * The **core** is plain TypeScript with no `claude-code` import. Both modules import from it.
+* Online play (section 13) adds the net helper beside the key helper and an online match in the hooks module. With `online` off none of it runs.
 
 ### 6.2 Files
 
@@ -626,7 +672,7 @@ The Windows and WSL routes are measured. Linux and macOS are plans until M2b has
 * Output, the same for every helper, one line per change: `K <mask> <unix ms>` (the mask bits of 6.10). While the terminal is not in the foreground the mask is 0. A heartbeat `H <unix ms>` goes out every 500 ms; the first line is one, once the helper is ready. A helper that cannot work writes `E <word>` once and exits, for example on Wayland without the `input` group. The script also exits when its parent process is gone (checked with each heartbeat) or a write fails. Readers ignore any other line. stderr carries diagnostics only (the Windows script: one `start` line with its startup times and the chain of parents).
 * A helper that cannot tell which window is in front (Wayland) always sets bit 4. The 150 ms rule of 6.8 is then the only guard.
 * `keys.ts` buffers the stream text, splits it at line ends, and keeps the latest mask. `keys.ok` turns true with the helper's first `K` line, not its first `H`, which comes before it. No heartbeat for 2 seconds sets `keys.ok` to false until the helper speaks again, which brings back its last `K` mask (it writes one only on a change). An `E` line and the helper's end clear the mask for good, so the next helper starts from nothing.
-* What no helper does: it reads no other keys, stores nothing, and opens no network connection. The README must say what it reads and why.
+* What no helper does: it reads no other keys, stores nothing, and opens no network connection. The README must say what it reads and why. (Online play's net helper, 13.9, is the one process that talks to the network, and only with `online` on. It runs the key helper as its child and leaves it as it is.)
 
 ### 6.13 Fallback architecture B (only if P2 fails)
 
@@ -695,6 +741,43 @@ Other risks without a prototype of their own:
 * **First helper start.** It took 11 seconds once on this machine. The hint row says the court waits for it; a click counts down meanwhile, and the keys move once it is ready. In P4 five starts took 0.5 to 0.95 s.
 * **Sharing later.** A script that reads key state may alarm antivirus tools on other machines. The README has to be open about it, and say that the game needs it.
 
+**Online play (section 13).** Two more prototypes, built as the others: a tiny plugin each under `prototypes\`, their numbers in `prototypes\results\`, their findings in section 10.
+
+**P5 net helper** (`p5-net`, with the first `helper/net.ps1` of 13.9 and `tools/netpair.ts`). First the bare script, then the probe plugin, which starts the helper as the mod will, writes its control file and logs its lines. It answers:
+
+* STUN: whether both servers answer, how fast, and whether their two mappings agree (`A nat`) on this network and on a phone hotspot.
+* Windows Defender Firewall: whether a `powershell.exe` that binds UDP and sends first raises its dialog, and what punching does after "Allow" and after "Cancel".
+* The control file: whether `$.fs.write` writes into the helper's temp folder, on Windows and from WSL through `/mnt/c`, and the delay from the write to the helper acting on it (median, 95th percentile).
+* The key helper as its child: whether `keys.ps1` under `net.ps1` still finds the terminal, and how much later its `K` lines reach the hooks module than without the net helper in between.
+* Punching between two helpers: on one network (a second machine, or WSL with mirrored networking); IPv6 between two homes; IPv4 between two homes; one side on a phone hotspot. For each: connected or not, the time to `C up`, which candidates won.
+* Lockstep over 5 minutes at the delay picked: steps released per second, stalls (how many, the longest), with no loss and with `-Drop 5`; the step lines of both sides compared line by line.
+* Cost: CPU and memory of the net helper and its child together.
+* Cleanup: no net helper and no child left after the probe stops, after a reload and after quitting Claude.
+* Pass: STUN and the control file work; one network and at least one route between two homes connect within 5 s; both sides' step lines are identical; with a round trip up to 60 ms and no loss, fewer than 1% of steps stall; the two processes use under 3% of one core together; nothing is left behind. A hotspot that does not connect is expected and no fail.
+* Fail: stop and ask the user. The ways out are a relay (section 12, a service of our own after all) or online play on one network only.
+* `tools/netpair.ts` runs here first: two `net.ps1` on this machine with scripted keys.
+
+**P6 lobby** (`p6-lobby`). A probe plugin whose `/p6` command publishes to and polls a private topic on ntfy.sh through `$.http.fetch`, run in two sessions with config folders of their own. It answers:
+
+* the time from a publish in one session to the poll that sees it in the other, and what the answers' headers say,
+* what a `fetch` to an address that never answers does: how long until it rejects, and what happens to a hook dispatch and to a loop of its own that wait on it (5.1 row 90),
+* whether anything prompts or refuses on the way,
+* TweetNaCl: whether the vendored ES module loads in the hooks worker and passes validate, and how long `keyPair`, `box`, `box.open` and `box.before` take there.
+* Pass: a message is seen in the other session at the next poll; a `fetch` that hangs can be given up after 10 s without holding anything else; each TweetNaCl call takes under 50 ms.
+* Fail: stop and ask the user (another meeting point, 13.15).
+* P6 provokes no 429 on purpose: the service is free, and repeated excess can ban the address. The kit tests the back off against a stand-in instead.
+
+Other risks of online play, without a prototype of their own:
+
+* **ntfy.sh changes its limits, its terms or goes away.** The lobby is one URL; the README names the service. A second meeting point is an idea for later (section 12).
+* **Several machines behind one address** (an office, a household) share ntfy's limits, which the lease cannot coordinate across machines. The back off of 13.6 keeps them from being banned.
+* **The same result on every system** (D18). 6.3 argues it, and the pinned hashes of section 8 prove it on each system the kit runs on. ECMAScript calls `Math.sqrt` implementation approximated; every engine in use takes the processor's correctly rounded square root, and the pinned hash test is what tells.
+* **Networks that cannot be punched through** (13.7). Such pairs play the AI and are not paired again for 10 minutes.
+* **Firewall dialogs** on Windows (P5) and from the macOS application firewall when it is on (M20).
+* **macOS without Python** (D22): no online play there, said in one line.
+* **A desync** despite equal versions: the hashes end the meeting and log it.
+* **Flooding of the public topic**: matchmaking stops, the game does not (13.14).
+
 ---
 
 ## 8. How it is tested
@@ -733,6 +816,28 @@ Manual checks (the user, in a session started with `dev.ps1`; the milestone says
 * Another window in front pauses the game within about half a second; a long busy turn in front never does (M5).
 * The countdown and the win screen's line pulsing with each beat, the eyes following the ball, the hopping winner and the flat loser (M10).
 
+**Online play (section 13).** Automatic tests, by milestone:
+
+* **Core** (M14): input bytes to `Input`s, the flag bits masked; each seat's pause and resume, the game running only with neither paused, the countdown after the last resume, the pause limit at 900 paused steps ending the meeting on both seats alike; a `done` from one seat giving the 600 step cut and the end at `rallyOver`; a `leave` voiding the rally; the next match counting down by itself after the win screen; the first serve by match number. `stateHash`: the same game gives the same hash, a change of any field gives another. **Pinned hashes**: 10,000 steps of seeded AI against AI on 60, 110 and 160 columns end in three fixed hashes, written into the test. They hold the core's arithmetic to one result on every system the suite runs on (D18), and they change only with a deliberate change of the core, which then belongs to a new version.
+* **Drawing** (M14): the `claude` seat's picture is the exact mirror of the `you` seat's, with the colours swapped so each sees themself in blue on the left; a match narrower than the court is centred with blank columns beside it.
+* **Identity and people** (M15): the code of a known key; codes read with and without dashes, in lower case, with I, L and O; the nickname rule on accepted and refused names, and a stranger's name cleaned; the default nickname; labels; the cap on rivals; every new `/volley` form, as the command tests of version 1.
+* **Sealing** (M15): a box opens for its receiver, not for anyone else; a box that names a `from` other than its key's code, one older than 60 s, and one with a nonce seen before are dropped.
+* **Lobby** (M16, against a stand-in lobby on `http.fetch`): the message reader drops anything malformed or oversized; presence by `hello`, `bye` and the 6 minutes; the pairing order; mutual offers settle on the lower code; `friends` mode refuses strangers; blocked codes never; an offer that runs out and the skips of 2 and 10 minutes; the bucket, never more than ntfy allows; a 429 and its `Retry-After`, doubling up to 15 minutes; a request given up after 10 s; the day's count; the lease between two sessions over the store stand-in.
+* **Net lines** (M17): the reader takes `K`, `H`, `E`, `P`, `A`, `C`, `S`, `X`, `T` and `N` in odd pieces and ignores anything else; the control file is written as 13.9 says, its number only rising.
+* **The meeting in the kit** (M17, M18; a stand-in lobby, a stand-in net helper on `process.spawn` as in 5.1 row 72, the store and `fs.write` answered by the test, the tick clock): with `online` off no request goes out and the key helper starts as before; on, the first click brings a `hello`; an offer from the stand-in is answered and the helper gets `peer`; `C up` and the end of the AI rally bring `start`; step lines move both blobs and a point is saved under the rival's code; Esc, `prompt.edit` and a silent court each send `pause`, a click sends `resume`; the 15 s limit ends the meeting; a turn end sends `done`, the rally plays out, the standing is saved and the court closes; `C lost` voids the rally and saves; a hash mismatch ends the meeting; meeting the same rival again resumes the standing that is further on; the score row shows the nickname and the ping; the court of the `claude` seat is mirrored.
+* **Helpers** (M13, M19): `tools/netpair.ts` runs two net helpers on one machine with scripted keys for a minute, with no loss and with 5%, and compares their step lines: `net.ps1` with `net.ps1` on Windows, `net.py` with `net.py` in WSL, and `net.ps1` against `net.py` across Windows and WSL.
+
+Manual checks of online play (the user, with a second player or a scripted one, `WOBBLY_VOLLEY_NET_SCRIPT`; the milestone says which apply):
+
+* With `online` off, no `net.ps1` runs and `/volley` says nothing about online play.
+* `/volley code` and `/volley name`; a friend added by code is matched before a stranger.
+* A match against a person on another machine: both see themselves on the left, the ping on the score row, a pause by either side stops both, a click by the one who paused resumes.
+* A dialog during a meeting pauses both; one closed within 15 s lets play go on, one held longer ends the meeting with the standing saved.
+* A turn end on one side: the rally plays out on both courts, that court closes, the other plays Jelly again.
+* The same two meet again and the match goes on at its score.
+* `/volley block` ends the meeting, and the blocked player is not matched again.
+* After the session ends, no net helper and no key helper is left (`Get-Process powershell`).
+
 ---
 
 ## 9. Milestones
@@ -752,6 +857,19 @@ Each one fits a single session. Do them in order. A milestone that waits on anot
 * [x] **M9 AI levels.** `AiSource` in full, the three levels, the `difficulty` picker. **Done when** the AI tests are green and the user finds easy beatable and hard demanding. State 2026-10-12: built on 2026-10-09 (6.6 and section 11; 152 tests, 12 deliberate breaks) and committed without the tick. Open, both the user's: the verdict on easy and hard, and the check that a level changed in `/config` under an open court shows on the score row (section 8). Estimate for what is left: 1 h, and 1 to 2 h for each tuning round the verdict asks for. The verdict comes in M10's second part, after the constants are tuned, since a tuning change moves the levels (section 11, M10). **The user's verdict, 2026-10-12, on the constants as they are: easy and hard work well.** The `/config` check passed the same day: a level changed under an open court shows on the score row. M10 moved no constant, so the verdict stands. Done 2026-10-12 (the estimate of 1 h for what was left held; no tuning round was needed).
 * [x] **M10 Polish and tuning.** Eyes that follow the ball, countdown digits, the win screen, final hint texts (the arrow for a high ball came with M4). One tuning pass of the constants together with the user. **Done when** the user signs off on the feel and all tests are green. In two parts (2026-10-12): the first, the look, needs nobody; the second is one play session with the user that tunes the constants with `tools/tune.ts` beside it, then takes M9's verdict, then ticks both. Estimate 11 to 12 h in all: about 8 h for the first part, 3 to 4 h for the second, and 1 to 2 h for each further round (about 1 h for a constant of movement, 1.5 to 2 h for `SERVE_Y` or `NET_H`). State 2026-10-12: the first part is built (3.2, 6.7, section 11; 171 tests, 22 deliberate breaks and 12 more after the big digits gave way to the pulsing line) and committed without the tick. The second part was short: the user found the feel good as it is and moved no constant, so `tools/tune.ts` stays ready for a later round. Done 2026-10-12 (about 8 h for the first part, under 1 h for the second; estimate 11 to 12 h). The open check of 2026-10-07, whether a court keeps its `Client` across a reload, stays open: with no constant moved there was no reload with a court shown to watch.
 * [x] **M11 Release preparation.** `README.md` (what it is, install line, controls, settings, an open section on the key helper that names per system what held keys need and whether they were tested), `.claude-plugin\marketplace.json`, version 1.0.0, a final validate. **Done when** validate reads the marketplace file without errors and the repo is pushed. Making the repo public is the user's step. Done 2026-10-12 (estimate 4 to 5 h, and 1 h more for the AI's names, which the user chose on the way: Pudding, Jelly, Gummy): 173 tests, 7 deliberate breaks; validate reads the marketplace file, plain and strict; an install from the folder and one from GitHub, each into a throwaway config, answered as 1.0.0 (section 11). The points left to the user for the public repo were settled the same day (section 11): the mod is renamed to Wobbly Volley, the license is MIT, this file is cleaned for release, and the public history starts with one release commit.
+
+Version 2, online play (section 13). Prototypes first, as in version 1: the parts that may not work at all come before the parts that surely do.
+
+* [ ] **M12 Prototype P5, the net helper on Windows.** `helper/net.ps1` in full (13.7 to 13.9) with its test modes, `tools/netpair.ts`, and the probe plugin `p5-net` (section 7). Measured on this machine, on one network with a second machine or WSL, and between two homes (the friend, or a phone hotspot for the side that may not connect). **Done when** every question of P5 has its finding in section 10 and the pass or fail is recorded; on a fail, the user has decided how 13.1 changes. The part between two homes may wait on the friend: then the milestone is marked waiting and M13 goes on.
+* [ ] **M13 Prototype P6, the lobby.** The probe plugin `p6-lobby` (section 7): ntfy.sh through `$.http.fetch` between two sessions on a private topic, a `fetch` that hangs, TweetNaCl in the hooks worker. **Done when** every question of P6 has its finding in section 10 and the pass or fail is recorded; on a fail, the user has decided how 13.6 changes.
+* [ ] **M14 Core for online play.** `core/online.ts` (seats, step input, flags, pauses, the pause limit, `done`, the ends, `stateHash`) and the seat's view in `draw.ts` (mirror, own colour, a narrower match), with the tests of section 8 and the pinned hashes. **Done when** the tests are green on Windows and in WSL, and no file under `core\` imports `claude-code`.
+* [ ] **M15 Identity, people and commands.** `hooks/vendor/nacl.js`, `identity.ts`, `seal.ts`, `people.ts`, the store keys of 13.12, the `/volley` forms of 13.13, and the `online` row in `plugin.json`. No network yet: `online` set does nothing but make the key pair. **Done when** the tests are green, and in a session the user has set a nickname, read their code, added a friend's code and listed the friends.
+* [ ] **M16 The lobby.** `lobby.ts` (13.6): the messages, presence, the pacing with the bucket, the back off, the day's count and the lease, the pairing rules, offers and answers sealed. Tested against a stand-in lobby in the kit. **Done when** the tests are green, and two sessions on this machine with config folders of their own find each other on a private topic (`WOBBLY_VOLLEY_LOBBY`) and each names the other in its log.
+* [ ] **M17 The meeting in the hooks module.** `net.ts` (the pick of the net helper, its lines, the control file, the start in WSL) and `match.ts` (13.10): connecting, joining, the steps, the flags, the ends, saving and resume. Kit tests with a stand-in net helper. **Done when** the tests are green, and two sessions on this machine (config folders of their own, a private topic, one side scripted through `WOBBLY_VOLLEY_NET_SCRIPT`) play through the real `net.ps1` to a turn end that saves on both sides, and their next meeting resumes the standing.
+* [ ] **M18 The court in online play.** 13.11 in full: the props and the report, the mirror, the narrower match, the score row with the ping, the hints. **Done when** the tests are green and the user has played a whole match against a person on another machine, with the manual online checks of section 8 passed.
+* [ ] **M19 `net.py` for Linux and macOS.** The Python net helper (13.9), the pick of `python3` on macOS, the start on both systems, `uname` joining the pick as 6.12 foresaw. Until M2b has passed the key helpers of Linux and macOS, `net.py` is checked with `--script` only. **Done when** `tools/netpair.ts` passes `net.py` with `net.py` and `net.py` against `net.ps1` (in WSL against Windows), and the kit tests of the pick are green.
+* [ ] **M20 Rounds across systems.** Windows against Linux (CachyOS, a second machine) and Windows against macOS (the friend), each once between two homes: a whole match, a turn end and the resume, the pinned hashes green in that system's kit, the macOS firewall when it is on, no helper left behind. Needs M2b's rounds for Linux and macOS. **Done when** each pairing has its pass or fail in section 10. A system that fails has no online play, and the README says so.
+* [ ] **M21 Release 2.0.0.** README: online play, what goes where (13.14), the net helper per system, what P5 found on firewalls, the networks that cannot connect (13.7), ntfy.sh and its limits. Version 2.0.0 in `plugin.json` and `VERSION`, a final validate. **Done when** validate passes and the repo is pushed. Publishing is the user's step.
 
 ---
 
@@ -787,6 +905,18 @@ P1 findings come from `prototypes\results\p1-band.json` (the run after the last 
 | P4 on WSL (M2b) | 2026-10-06, bare run only: `helper/keys.ps1` started from a bash in Ubuntu-24.04 through `powershell.exe` wrote its first heartbeat 548 ms after the start, its walk went `wsl.exe` < `wsl.exe` < ... < `WindowsTerminal.exe`, and it saw the terminal in front. The probe loads in the native Linux `claude` 2.1.291 there and picks `wsl`. 2026-10-12, probe (`prototypes/results/p4-key-helper-wsl.json`, one load in the native `claude` 2.1.296, two starts): **pass** on what was measured, and the user's call to ship (section 11). Spawn to first heartbeat 574 ms (on Windows' clock 530 and 604 ms from process to ready); the walk went `wsl.exe` < `wsl.exe` < `powershell.exe` < `WindowsTerminal.exe`. Key to hooks module: at six first presses the helper's `K` line came within 1 ms of the terminal's own key event (the helper's stamps are on Windows' clock and cannot be set against the WSL one, section 11). Hooks module to `Client`: median 12 ms, 95th percentile 25 ms, worst 32 ms (56 changes, 1 overtaken), so key to `Client` lies well inside 50 and 100 ms. Two keys at once came through (A with W, D with W, A with D). No helper left behind after a `session.end`, after `/p4 off` and after quitting Claude (a process check afterwards found only the helpers of Windows sessions). Not done in this round: the streaming turn, `/p4 restart`, the reload, another window in front, and 57 key changes instead of about 200. |
 | P4 on Linux, CachyOS (M2b) | open |
 | P4 on macOS (M2b) | open |
+| P5: STUN and the NAT's mapping | open |
+| P5: Windows Defender Firewall | open |
+| P5: the control file, write to act (Windows, WSL) | open |
+| P5: the key helper as the net helper's child | open |
+| P5: punching (one network, IPv6, IPv4 between homes, hotspot) | open |
+| P5: lockstep (steps per second, stalls, loss, identical step lines) | open |
+| P5: cost and cleanup | open |
+| P6: publish to poll between two sessions | open |
+| P6: a `fetch` that hangs | open |
+| P6: prompts or refusals | open |
+| P6: TweetNaCl in the hooks worker | open |
+| Online across systems (M20): Windows and Linux, Windows and macOS | open |
 
 ---
 
@@ -953,6 +1083,14 @@ Add a line for every deviation from this plan: date, milestone, what changed, wh
 * 2026-10-12, before the release, finding: **the docs on mods and on publishing, read for the release** (5.1 row 88). The mods API is documented in public and mods are on by default, so section 5 describes a public API; "early access" in the types means the surface may still move between releases. What follows here: the README names 2.1.287 as the oldest build and gives the shell form of the install line beside the one for the prompt; every later release raises `version` in `plugin.json` and `VERSION` together, because installed users get a new copy only when the version changes (`.claude/workflow.md`); and the mod's `name` is fixed from the first public install on. Should a rename ever be wanted, it touches the repo and the install line, `name` in `plugin.json` and `marketplace.json` (with a `renames` entry there for existing installs), the `plugin` key of the four `$.state` references and of `types/index.d.ts`, the texts of `/volley` and the band's lines, `WOBBLY_VOLLEY_CLOCK`, and the store file and the `/config` values, which are keyed by the mod's name (5.1 row 81), so a standing would need carrying over.
 * 2026-10-12, the release, the user's choice: **the public history starts with one release commit.** The commits of the build, M0 to M11, are not in the public repo; this log is their record, which is why it names no commit. The release lives in a new repo, `kopylow/wobbly-volley`: after a forced push GitHub still served the old commits by hash, so the old repo stays private with the user, as does a bundle of the old history.
 * 2026-10-12, the release: **the repo is public**, the user's go. Checked right after: the marketplace file reads without a login, and `claude plugin install wobbly-volley --marketplace kopylow/wobbly-volley` installed and answered `/volley stats` in an empty `CLAUDE_CONFIG_DIR` with git's global and system config switched off (`GIT_CONFIG_GLOBAL` an empty file, `GIT_CONFIG_NOSYSTEM=1`, `GIT_TERMINAL_PROMPT=0`), so with no stored login, as a stranger would. Publishing through the repo's own marketplace needs nothing more (5.1 row 88). For finding it, the user's choice: a GitHub release `v1.0.0` with short notes, and the repo's topics `claude-code`, `claude-code-plugin`, `mod`, `game`, `volleyball` and `terminal-game`. No `claude plugin tag` tag (`wobbly-volley--v1.0.0`): it matters only to plugins that declare a version range on this one.
+* 2026-10-12, after the release, the user's decisions: **online play for version 2** (D14 to D22), designed in section 13 with milestones M12 to M21. The user asked for peer to peer play with as little server as possible, ideally none; chose a friend system with personal codes, friends matched first, and automatic matchmaking over a free public meeting point; kept online play bound to the waiting time, with the AI until a person is found; asked that a match a turn end interrupts be saved on both sides and resumed when the same two meet again, with statistics per ID; asked for every system and any pairing of them; and asked for a nickname for everyone. Three recommendations of the designer were accepted with the go to write this plan: online play off by default (D20), a pause limit of 15 s (D21), and Python as the second helper language, for Linux and macOS (D22). What the design session found on the way:
+  * **The engine declares no public key cryptography** (5.1 row 89): `crypto.subtle` has `digest` alone. The mod brings TweetNaCl-js (public domain) for the key pair and for sealing lobby messages; a box proves its sender, so no signatures are needed (13.5).
+  * **ntfy.sh's limits shape the lobby** (13.6): 60 requests and one more every 5 s per address, 250 messages a day, messages up to 4,096 bytes, topics public. Hence a poll every 6 s, a bucket of the mod's own, a cap of 200 messages a day per machine, one searching session per machine, and addresses only inside sealed boxes. `$.http.fetch` cannot stream (5.1 row 90), so the mod polls.
+  * **The net helper runs the key helper as its child** (13.9). That refines D22 as first worded, where Python would have read the keys on macOS too: the key helpers stay as they are, play against the AI on macOS needs no Python, and their promise to open no connection holds.
+  * **The mod talks to the net helper through a file** (13.9): the helper's stdin closes at its start (5.1 row 19), and from WSL the Windows side's `127.0.0.1` is out of reach in WSL's default network mode.
+  * **The hooks module owns a meeting** (13.3), unlike the AI match: a dialog or `[-]` unmounts the `Client` (5.1 row 45), and a meeting has to go on through a short pause.
+  * **macOS's `/usr/bin/python3` is a stub** that raises the dialog to install the command line tools, so the mod asks `xcode-select -p` first (13.9).
+  * Touched: the status, sections 0, 1, 2, 3, 5, 6.1, 6.12, 7, 8, 9, 10 and 12, the new section 13, and `.claude\workflow.md`. No code changed.
 
 ---
 
@@ -970,8 +1108,276 @@ Recorded, not designed.
 * **Faster return after a dialog**, if a later build offers an event for a dialog closing.
 * **Classic Blobby rules** as an option: only the server scores, to 15.
 * **Background agents** counting as waiting time too.
-* **Multiplayer.** Notes from the design sessions:
-  * A mod has no sockets, only `$.http.fetch` and `$.process.spawn`, so network play needs a helper process.
-  * Two players are rarely waiting on Claude at the same moment.
-  * Truly serverless internet play generally needs a public STUN server and an invite code.
-  * What version 1 already does for it: the game logic takes one `Input` per side per tick and does not know its source (6.5), and the simulation is deterministic with a fixed step and a seeded generator (6.3).
+* **Multiplayer.** Designed as online play for version 2 in section 13. Left for later there:
+  * A relay for pairs that cannot connect directly (both behind carrier grade or symmetric NAT), for instance a Cloudflare Worker on its free tier. It would be a service of our own after all, which D15 avoids.
+  * Rollback on top of the lockstep stream (13.15).
+  * The net helper streaming the lobby instead of the mod polling it (13.15).
+  * A second meeting point beside ntfy.sh, for when that one is down or changes its limits.
+  * Online play from a court opened with `/volley` (3.2).
+
+---
+
+## 13. Online play (version 2)
+
+Designed on 2026-10-12 from the user's decisions D14 to D22 (3.1) and the designer's defaults for online play (3.2). For milestones M12 to M21 this section is binding the way sections 3 and 6 are for version 1. With `online` off nothing here runs: no request leaves the mod, and the key helper starts as in version 1.
+
+### 13.1 Goal and scope
+
+**Goal.** Play a person instead of the AI when someone else is waiting on Claude at the same time, with no server of our own, on every system, with every match carried over between meetings.
+
+**In version 2**
+
+* Automatic matchmaking in a public lobby on ntfy.sh, friends first (D14, D15).
+* Personal friend codes, a friend list, a block list, and a nickname for every player (D14, D19).
+* A direct UDP connection between the two players, found through public STUN servers and hole punching, with IPv6 and the local network tried as well (13.7).
+* Lockstep play with a small input delay: only inputs travel, and the net helper is the clock (13.8).
+* The AI until a person is found, and again after they leave (D16). The match is saved on both sides when one leaves and resumed when the two meet again (D17).
+* A record per opponent and one against people, beside the AI's (D17).
+* Windows, WSL, Linux and macOS, in any pairing (D18); on macOS with a real `python3` (D22).
+* The `online` row in `/config`: off, friends or everyone, off by default (D20).
+* New `/volley` forms for the code, the nickname, friends, blocking and opponents (13.13).
+
+**Left out of version 2**
+
+* A relay for pairs whose networks cannot be punched through. They play the AI (section 12 keeps the idea).
+* Rollback (section 12).
+* Rankings across players, chat, spectators, more than two players.
+* Moderation beyond each player's own block list.
+* Online play from a court opened with `/volley` (3.2).
+* Online play in the desktop app, VS Code or on mobile (there is no court there).
+
+### 13.2 A meeting, as the players see it
+
+1. The court opens a few seconds into a turn, as in version 1. You click and play Jelly. With `online` set, the mod looks for a player meanwhile, and the hint row says so.
+2. Mia is waiting too. The two mods pair up and connect, and the hint row says "Mia joins after this rally". Your rally against Jelly plays out (10 s at most), then the court counts down and you play Mia: you on the left in blue, Mia on the right in orange, her nickname and the ping on the score row. On Mia's court she is the one on the left.
+3. Esc, a dialog, typing or another window in front pauses the match for both. Whoever paused resumes with a click. A pause of more than 15 s ends the meeting (D21).
+4. Your turn ends. The rally under way plays out on both courts, the match is saved on both sides, and your court closes. Mia plays Jelly again, and her mod looks for the next player.
+5. The next time you and Mia are both waiting, your mods pick each other before strangers (13.6), and the match goes on at the score it had.
+
+A **meeting** is the time two players are connected; a match may take several meetings.
+
+### 13.3 Overview
+
+```
+ drawing thread            hooks worker                               host system              the other player
+┌────────────────┐ post   ┌───────────────────────────────┐ stdout  ┌───────────────────┐  UDP  ┌─────────────┐
+│ court.tsx      │ ─────→ │ register.tsx                  │ ←────── │ helper/net.*      │ ←───→ │ its net     │
+│  AI match (v1) │ report │  online/lobby.ts  (matching)  │ lines   │  STUN, punching,  │       │ helper      │
+│  online match  │ ←───── │  online/match.ts  (the game)  │ ──────→ │  lockstep clock   │       └─────────────┘
+│  drawn from    │ props  │  online/people.ts (the store) │ control │    │ child        │
+│  the props     │        │  online/net.ts    (lines)     │ file    │    ▼              │
+└────────────────┘        └───────────────┬───────────────┘         │  helper/keys.*    │
+                                          │ $.http.fetch            └───────────────────┘
+                                          ▼
+                                  ntfy.sh topic: the lobby
+```
+
+* The **court** keeps the AI match as in version 1. During a meeting it draws the game its props carry, and it reports clicks and reasons to pause.
+* The **hooks module** owns the online match and steps it on each step line of the net helper. A dialog, `[-]` or a remount takes the `Client` away (5.1 row 45), while the hooks module stays; the step lines reach it first (5.1 row 52); and it already writes the store, talks to the lobby and holds the control file. So the match lives there.
+* The **net helper** is the only process with a network connection. It runs the key helper of its system as its own child and passes that helper's lines on, so the key helpers stay exactly as they are (6.12), and play against the AI goes on through the net helper's copy of the `K` lines.
+* The **core** gains `core/online.ts` and stays free of any `claude-code` import (section 0).
+
+### 13.4 Files
+
+```
+  core\
+    online.ts               the online game around Game: seats, step input from masks, flags, the pause limit, the state hash
+    draw.ts                 (changed) the view of a seat: mirrored, own colour, a match narrower than its band
+  hooks\
+    online\
+      identity.ts           the key pair, the code, nicknames and their rule
+      people.ts             friends, the block list, rivals and their standings in the store
+      lobby.ts              the lobby: messages, presence, polling and pacing, pairing
+      seal.ts               a lobby message sealed for one player (TweetNaCl's box)
+      net.ts                the net helper: which one a system starts, its lines, the control file
+      match.ts              a meeting: steps, flags, pauses, hashes, saving, resume
+    vendor\
+      nacl.js               TweetNaCl-js 1.0.3 (public domain), its export turned into an ES module export
+    court.tsx, register.tsx, protocol.ts, standing.ts   (changed)
+  helper\
+    net.ps1                 Windows and WSL: STUN, punching, lockstep; runs keys.ps1 as its child
+    net.py                  Linux and macOS: the same; runs keys.py or keys.js as its child
+  tools\
+    netpair.ts              two net helpers against each other on one machine with scripted keys; compares their step lines
+  tests\
+    online, identity, lobby, seal, people, net, match   one *.test.ts each, and kit tests of the court online
+  prototypes\
+    p5-net\ p6-lobby\
+```
+
+### 13.5 Identity, nicknames, friends
+
+* **Key pair.** At the first start with `online` on, the mod makes an X25519 key pair with TweetNaCl (`nacl.box.keyPair`, its randomness from `crypto.getRandomValues`) and keeps it in `$.store` (`identity`, 13.12). The engine declares no key agreement, signing or encryption in `crypto.subtle`, only `digest` (5.1 row 89), so the mod brings its own: TweetNaCl-js, one file, audited, public domain. A box proves its sender (only the holder of a secret key seals from it), so no signatures are needed.
+* **Code.** The first 60 bits of SHA-256 over the public key (`crypto.subtle.digest`), in Crockford's base32, shown in three groups of four: `4F2K-M9XD-7QAB`. It is the player's ID everywhere: in the lobby, in the store and in `/volley`. A typed code is read without dashes and spaces, in any case, with I and L read as 1 and O as 0. To pass for someone, one would need a key whose hash starts with the same 60 bits.
+* **Nickname** (D19). Set with `/volley name <nickname>` and kept in the store (`nick`): 2 to 16 characters after NFC, from letters of the Latin, Greek and Cyrillic scripts, digits, the space, `.`, `_` and `-`, with no space at either end. Those scripts take one column per letter, so the score row can count on the width. Until one is set, the nickname is "Blob" and the first four characters of the code ("Blob 4F2K"). A nickname from the lobby is cleaned by the same rule: anything else is dropped and the rest cut at 16; with fewer than 2 characters left it shows as "Blob" and the first four of that player's code. So no control character or escape from a stranger reaches the court.
+* **Friends.** `/volley friend <code> [label]` adds a friend, `/volley unfriend <code or label>` removes one. A label is the player's own name for that friend, cleaned by the nickname rule. The court shows a friend by their label when there is one, else by their nickname. Friendship is one sided: adding a code changes one's own matching only.
+* **Block list.** `/volley block` blocks the current or last opponent and ends a meeting under way at once, the rally void. `/volley block <code>` blocks any code, `/volley unblock <code>` lifts it. A blocked code is never offered a match, and its offers are ignored.
+
+### 13.6 The lobby
+
+**The service** (docs.ntfy.sh, read on 2026-10-12: the pages on publishing, subscribing, configuration and the terms). ntfy.sh is a public publish and subscribe service over plain HTTPS, run by ntfy LLC, open source, free within limits. What the design relies on:
+
+* `POST https://ntfy.sh/<topic>` publishes the body as one message. A body over 4,096 bytes becomes an attachment, so every lobby message stays far below that.
+* `GET https://ntfy.sh/<topic>/json?poll=1&since=<x>` returns the cached messages as JSON lines and closes. `x` is a message id (only newer ones), a duration such as `6m`, a Unix time, or `all`. Each message has `id`, `time`, `event` and, for the event `message`, the body as `message`.
+* Messages stay cached for 12 hours by default. Topics are public: anyone who knows the name reads and writes.
+* Limits per visitor, that is per IPv4 address or IPv6 /64: a bucket of 60 requests that refills by one every 5 s, and on ntfy.sh 250 messages a day. Past a limit the answer is 429, and repeated excess may bring a temporary ban of the address. The terms forbid getting around the rate limits and loads out of proportion.
+* No streaming for the mod: `$.http.fetch` resolves once the body is read (5.1 row 90) and a subscription never ends, so the mod polls.
+
+**Topic.** `wobbly-volley-lobby-1`, its last number the protocol version, so mods of different protocols never meet. `WOBBLY_VOLLEY_LOBBY` (a whole URL) points prototypes and manual checks at a private topic; while it is set, a court opened with `/volley` enters the lobby too, so two sessions can meet without turns.
+
+**Messages.** The body is one JSON object, `{ v: 1, k, from, ... }`, read field by field as a report is (6.10) and dropped on any doubt.
+
+| `k` | Sent | Fields | Readable by all |
+|---|---|---|---|
+| `hello` | on entering the lobby, then every 5 minutes while in it | `from`, `pk`, `nick`, `ver` (the mod's version), `mode` (`friends` or `everyone`) | all of them |
+| `bye` | on leaving the lobby for good (the court closes, `online` goes off) | `from` | all of them |
+| `offer` | to propose a match | `from`, `to`, `pk`, `nonce`, `box` | `from`, `to`, `pk` |
+| `answer` | to accept an offer; no answer means no | `from`, `to`, `nonce`, `box` | `from`, `to` |
+
+The `box` of an offer or an answer holds `{ ts, nick, w, cand, saved, kn }`: the time, the nickname, the court's width, the address candidates (13.7), the standing saved against the other player (13.10), and a random nonce for the match key (13.8). It is sealed with `nacl.box` for the receiver from the sender's secret key, so only the receiver opens it and only the sender's key made it. `from` must be the code of `pk`. Addresses therefore never stand in the public topic. A box older than 60 s, or with a nonce seen before, is dropped. Anyone can post a `hello` in someone else's name, but nobody else can seal their box, so the court shows the nickname from the box; the one in a `hello` only serves `/volley friends`.
+
+**Presence.** A player counts as in the lobby from their `hello` until their `bye`, or for 6 minutes after their last `hello`. The first poll on entering asks `since=6m`, later ones `since=<last id>`.
+
+**Who enters.** A session enters the lobby when all of these hold: `online` is `friends` or `everyone`; the court opened by itself in a turn (not through `/volley`, 3.2); it has had its first click; the key helper is trusted (`keys.ok`, 6.12); the net helper has reported its candidates; and no other session on this machine holds the lobby (the lease below). It leaves with a `bye` when the court closes or `online` goes off. While paused or in a meeting it stays listed and does not answer offers.
+
+**Pacing.**
+
+* A poll every 6 s, and every 2 s for the 20 s after sending an offer or an answer. The mod keeps a bucket of its own like ntfy's (60, one more every 5 s), counts every request against it, and sends nothing while it is empty.
+* A 429 stops all lobby traffic for the time its `Retry-After` names, else for 60 s, doubled at each 429 in a row up to 15 minutes. Any other failure waits 30 s. A request that has not resolved after 10 s is given up (P6 finds out what a hanging `fetch` does).
+* At most 200 messages per UTC day and machine, counted in the store (`lobbyDay`), so one machine never uses up ntfy's 250 alone; others behind the same address share the rest.
+* **Lease.** One session per machine searches. `lobbyLease` in the store names the session and a time; the holder renews it every 10 s, and it is free after 30 s without renewal. A session without the lease plays the AI only. Otherwise several sessions behind one address would drain the bucket together.
+
+**Pairing.** Rules every mod follows alike:
+
+* Candidates are the players present whose `ver` equals one's own, who are not oneself, not blocked, and allowed by both modes: in `friends` mode a player offers to and accepts only codes on their own friend list.
+* Order: friends first, then players with whom one has an unfinished match, then everyone else; within each group the longest waiting (by their first `hello`) first. A candidate who let an offer run out is skipped for 2 minutes, a pair whose connection failed for 10 minutes.
+* A player has at most one open offer. It runs out after 15 s without an answer.
+* A player with no open offer and no meeting accepts the first acceptable offer they read, by answering it.
+* A player with an open offer answers no other offer, with one exception: two players who offered to each other. Then the offer from the lower code stands, and the player with the higher code answers it.
+* An answer leads straight to connecting (13.7). A pair that has not connected within 10 s goes back to the lobby.
+* Accepted gap: an offer from a friend that comes while one's own offer to a stranger is open goes unanswered.
+
+**Cost.** About four messages a match: an offer, an answer, and a share of the `hello` and the `bye`. With 200 a day a machine has room for about 50 matches and some ten hours in the lobby.
+
+### 13.7 Connecting
+
+**Candidates.** The net helper opens one UDP socket for IPv4 and one for IPv6, on ports the system picks, and reports its candidates:
+
+* `host4`: its local IPv4 addresses (for players on the same network),
+* `host6`: its global IPv6 addresses (no NAT there; a stateful firewall lets in the answer to an outgoing packet),
+* `stun4`: its public IPv4 address and port, asked with a STUN binding request (RFC 5389: 20 bytes out, the address from the answer's `XOR-MAPPED-ADDRESS`) of `stun.l.google.com:19302` and `stun.cloudflare.com:3478`. When the two answers name different ports, the NAT maps per destination and punching will most likely fail; the helper says so (`A nat varies`).
+
+While no meeting runs it asks again every 20 s, which also keeps the mapping open, and reports a change.
+
+**Punching.** Once both sides have each other's candidates and the match key (13.8), both send probes to every candidate of the other every 50 ms for up to 10 s, and answer every probe that carries the session ID and a valid MAC. The first pair of addresses that has carried a probe and its answer both ways wins; when several do within the same 100 ms, IPv6 and the local network go before `stun4`. The helper then reports `C up <rtt> <delay>`, or after 10 s without a winner `C failed`.
+
+**Expected.** Two players on one network connect through `host4`. Two homes with IPv6 connect through `host6` in most cases. Two homes on IPv4 connect when at least one NAT keeps one mapping per source port (most home routers). Both behind carrier grade or symmetric NAT (mobile hotspots, some cable and fibre lines on IPv4 only): no connection, and both play the AI. P5 measures which of these hold.
+
+### 13.8 Lockstep: the net helper is the clock
+
+The simulation is deterministic (6.3), so the two sides exchange inputs only, and each runs the same game.
+
+* **Match key.** SHA-256 over the shared key of the two key pairs (`nacl.box.before`), the offer's `kn` and the answer's `kn`. Its first 4 bytes are the session ID; the rest keys an HMAC-SHA256 over every UDP packet, cut to 8 bytes. Both helper languages have HMAC-SHA256 in their standard library. A packet whose MAC fails is dropped unread.
+* **Packets.** `WV`, the version, the kind, the session ID, the body, the MAC. Kinds: `probe` and `probe answer` (punching and the round trip), `inputs`, `bye`. An `inputs` packet carries the highest step the sender holds from the other side, then a run of its own inputs (the first step, then up to 32 inputs of one byte), and now and then a state hash (a step and 4 bytes). About 40 bytes, 60 a second each way: about 2.4 kB/s.
+* **Input byte.** Bits 0 to 2 are A, D and W, as in the key mask (6.10). Bits 4 to 7 are the flags the mod asked for: 16 pause, 32 resume, 64 done (the turn ended), 128 leave.
+* **Clock.** Once told to start, the helper ticks 60 times a second on a monotonic clock. At its tick `t` it takes the newest key mask of its child, adds the pending flags, and makes that its input for step `t + D`. Every tick it sends the inputs the other side has not acknowledged, at most 32, so a lost packet costs nothing as long as a later one arrives.
+* **Release.** As soon as both inputs of the next step are known, in order, it writes `S <step> <you> <claude>`: the two input bytes in the order of the sim's sides (13.10). Neither side ever steps on a guessed input.
+* **Delay `D`.** Picked by the helper of the `you` seat from the round trip measured while punching: `ceil((rtt / 2 + 20 ms) / 16.7 ms)`, at least 2 and at most 8 (33 to 133 ms). It travels in that helper's first `inputs` packet and is fixed for the meeting.
+* **Stall.** A missing input holds the release, so both games stand still until it comes. Two clocks that drift apart wait on each other this way, so no clock sync is needed, and a side that starts later is waited for.
+* **Lost.** No valid packet for 3 s: `C lost`, and the helper stops sending inputs.
+
+### 13.9 The net helper (`helper/net.*`, `hooks/online/net.ts`)
+
+| System | Script | Started through | Its child |
+|---|---|---|---|
+| Windows | `helper/net.ps1` | `powershell.exe` with the arguments of 6.12 | `keys.ps1` |
+| WSL | `helper/net.ps1` | `powershell.exe`, the path from `wslpath -w` as in 6.12 | `keys.ps1` |
+| Linux | `helper/net.py` | `python3` | `keys.py` |
+| macOS | `helper/net.py` | the first real `python3` found (below) | `keys.js` through `osascript` |
+
+* **Two implementations, one contract** (D22). The lines out, the control file in, the packets and the timings of 13.7 and 13.8 are the contract, as the line format is for the key helpers (6.12). `tools/netpair.ts` holds both to it (section 8).
+* **The keys as its child.** The net helper starts the key helper of its system and reads its lines, and passes every `K`, `H` and `E` line on unchanged, so the court plays the AI through it exactly as through the key helper. The key helpers do not change and still open no connection. A key helper's walk up its parents passes the net helper and should still find the terminal (6.12); P5 checks that on Windows, the rounds of M20 elsewhere. The net helper ends its child when it ends; when it is killed, the child's own check of its parent ends it within one to four heartbeats.
+* **macOS's `python3`.** `/usr/bin/python3` is a stub that raises the dialog to install the Xcode command line tools when they are missing, so the mod never runs it unchecked. It takes `/usr/bin/python3` only when `xcode-select -p` exits with 0, else the first of `/opt/homebrew/bin/python3`, `/usr/local/bin/python3` and `/Library/Frameworks/Python.framework/Versions/Current/bin/python3` that exists. With none, online play is off on that Mac, the hint row and `/volley` say why, and play against the AI goes on through `keys.js` alone.
+* **When it runs.** With `online` on, the net helper takes the key helper's place and follows its rule (6.12): the court's posts start it, and it stops within about 1.5 s after they stop. During a meeting it stays until the meeting has ended, so a dialog does not cut the connection. Where no net helper can run (macOS without Python, a system whose net helper has not passed its round), the key helper runs as in version 1 and the mod stays out of the lobby.
+* **Lines out** (stdout; readers ignore any other line, as in 6.12):
+  * `K`, `H`, `E` from the child, unchanged.
+  * `P <path>` once at the start: the control file.
+  * `A <kind> <address> <port>`: a candidate (13.7), and `A nat <same|varies>`.
+  * `C up <rtt> <delay>`, `C failed`, `C lost`.
+  * `S <step> <you> <claude>`: one step (13.8).
+  * `X <step> <hash>`: the other side's state hash.
+  * `T <rtt> <lost>`: once a second while connected, the round trip and the packets lost in that second.
+  * `N <word>` once, when the network cannot work (`noudp`, `nostun`). The helper then goes on as a key helper.
+* **Control file in.** The mod's way to the helper while it runs, since its stdin closes after the start (5.1 row 19). The helper makes a file of its own in the system's temp folder (on Linux and macOS inside a folder only its user may read) and names it in its `P` line. The mod writes the whole file with `$.fs.write` (5.1 row 91): a number that only rises, one command per line, then `end`. The helper looks at the file every 20 ms, takes it only with its `end` line, and does the commands numbered above the last it did. Commands: `peer <session> <key> <seat> <candidates...>`, `start`, `flag <pause|resume|done|leave>`, `hash <step> <hash>`, `stop` (end the meeting and go on as a key helper). In WSL the mod writes through `wslpath -u` of the path. A file rather than a local port: from WSL the Windows side's `127.0.0.1` is out of reach in WSL's default network mode, and a port is open to every process on the machine, while the file is the user's alone. P5 measures the delay from writing to acting.
+* **Test modes.** `-Script <file>` (`--script` for `net.py`) takes the key masks from a file instead of a child, and `-Drop <percent>` drops that share of the outgoing packets. With `WOBBLY_VOLLEY_NET_SCRIPT` set, the mod starts its helper with `-Script`, for a manual match against a scripted player.
+* **What it does on the network.** STUN requests to the two servers, and UDP to and from the one player it was paired with. Nothing else. It stores nothing but its control file, which it deletes when it ends.
+
+### 13.10 The online match (`core/online.ts`, `hooks/online/match.ts`)
+
+* **Seats.** The player whose code sorts first takes the sim's `you` side, the other its `claude` side. Each mod knows its own seat, and the court mirrors the view of the `claude` seat (13.11). The names in the code stay: `Side` is the core's word for a side of the court.
+* **Start.** The two boxes carry each side's court width and saved standing. The width is the smaller of the two, clamped as in 6.4, and fixed for the meeting. When both saved the same standing (each seen from its own side), the match goes on from it; when they differ, the one further on counts: the higher `number`, then the more points played; with none saved, a new match starts at 0:0. In a new match the `you` seat serves first in odd numbered matches and the `claude` seat in even ones. The meeting starts with the countdown at step 0.
+* **Steps.** `stepOnline(online, you, claude)` turns the two input bytes into `Input`s (`run` = D minus A, `jump` = W, 6.5), applies the flags, then runs `tick` (6.4). It is pure and in the core, so both sides run the same function on the same bytes.
+* **Pauses** (D21). Each seat has its own paused flag: `pause` sets it, `resume` clears it. The game runs only while neither is set (it dispatches `pause` when the first is set and `start` when the last clears, 6.4), so the countdown runs and play goes on where it stopped. After 900 paused steps in a row (15 s) the meeting ends as a leave. After the win screen the next match counts down by itself; nobody needs to click.
+* **The mod's flags.** `pause`, for each reason of version 1 (6.8): Esc, the terminal leaving the front, a key without its press, the window losing the focus, `prompt.edit`. And for two reasons of its own: the court has not posted for 300 ms during a meeting (a dialog, `[-]`, a hidden band), and the court has no room for the match's width. `resume`, from a click on the court while this seat is paused. `done`, at the turn end of a court that opened by itself (6.9). `leave`, from `/volley block`, from `/volley off`, and when `online` goes off.
+* **Turn end** (D5, D17). A `done` from a seat dispatches `turnDone` on both sides at the same step: the rally under way gets its cut of 600 steps (6.4), and at `rallyOver` the meeting ends. That player's court closes as in version 1. The other player goes back to the AI and the lobby.
+* **Ends.** A meeting ends at `rallyOver` after a `done`, at the pause limit, at a `leave` (the rally void), at `C lost`, and at a hash mismatch (the rally void, logged with `$.ui.log(..., { to: 'debug' })`). In every case the mod writes `stop` and saves. A court still in play returns to its AI match with a countdown, since the keyboard is still the court's; a paused court returns to it paused and waits for its click; the court of a turn end closes.
+* **Saving** (D17). After every point and at the end, the standing against this rival goes to the store (`rivals`, 13.12), from the player's own side. At a match end the result counts into the rival's record and into the record against people. Both sides save the same standings, since they run the same steps. The one gap: when the connection breaks, one side may have taken a few steps more, with a point among them. At the next meeting the start rule above takes the standing that is further on.
+* **Hashes.** Every 60 steps each side hashes its game (`stateHash` in the core: FNV-1a over every number of the state as a 64 bit float, in a fixed order) and writes it as `hash`; the helper hands the other side's back as `X`. A mismatch ends the meeting.
+* **Joining.** After `C up` the court holds its AI match once the AI rally under way is over, 10 s at most (D5's cut; a rally still running then is void). Then the mod writes `start`. The helper that starts first waits for the other (13.8), and the hint row says who waits for whom (13.11). When no step line has come 15 s after `start`, the mod gives the meeting up, and the pair is skipped for 2 minutes.
+
+### 13.11 The court in online play (`hooks/court.tsx`, `core/draw.ts`)
+
+* **Props** gain `online`: `null`, or `{ phase: 'joining' | 'playing', seat, rival (the name to show), ping, game (the online game, plain JSON as 6.3 keeps it), hint }`. While it is set, the court draws `online.game` instead of its own game and steps nothing. Its AI game waits where it stopped and goes on after the meeting.
+* **The report** gains two counters that only rise: `clicks`, and `pauses` (a pause the court found: Esc, the front, the 150 ms rule, the focus, no room). The hooks module turns a rise into a `resume` or a `pause` flag.
+* **Mirror.** `draw` gains `view.seat`. The blob of that seat is drawn in the human's colours (blue), the other in the AI's (orange), and for the `claude` seat the whole picture is mirrored, so each player sees themself on the left. Since a blob's art already faces the net, the mirrored picture looks right on both courts.
+* **A narrower match.** The match's width may be smaller than the band. The court draws it centred and leaves the columns beside it blank. A band narrower than the match shows the line of 3.2 and sends `pause`.
+* **Score row.** "You 3 : 5 Mia", then the ping ("34 ms"), then the record against Mia, within 60 columns.
+* **Hints**, as examples (M18 fixes the words, each within 60 columns): "A and D run, W jumps. Looking for a player meanwhile." "Found Mia; connecting." "Mia joins after this rally." "Waiting for Mia's rally to end." "Mia paused; the match waits 15 s at most." "Mia left; the match is saved." "Could not connect to Mia; Jelly plays on."
+
+### 13.12 Persistence
+
+New keys in `$.store`, each one of its own, so sessions that write different ones do not overwrite each other (5.1 row 82):
+
+| Key | Value |
+|---|---|
+| `identity` | `{ v: 1, pk, sk }`, in base64 |
+| `nick` | the nickname, or none yet |
+| `friends` | `{ [code]: { label, added } }` |
+| `blocked` | `{ [code]: time }` |
+| `rivals` | `{ [code]: { nick, pk, last, match: { v: 1, you, them, server: 'you' or 'them', number }, record: VolleyRecord } }`, from the player's own side; friends are always kept, of the others the 100 met last |
+| `humans` | the record against people (`VolleyRecord`), beside `record`, which stays the record against the AI |
+| `lobbyDay`, `lobbyLease` | the day's message count and the lease (13.6) |
+
+The secret key lies in the store file like everything else there; whoever copies that file plays under the code. On the build machine Windows and WSL share the store (section 4), so both play under one code.
+
+### 13.13 Commands and settings
+
+* `online` in `/config`: a picker of `off`, `friends` and `everyone`, `off` by default (D20). `friends`: matched with friends only. `everyone`: friends first, then anyone. A change reloads the module (5.1 row 18), which ends a meeting under way as a lost connection does.
+* `/volley code`: the code and the nickname, and the line a friend types to add them.
+* `/volley name <nickname>`: sets the nickname, or says the rule.
+* `/volley friend <code> [label]`, `/volley unfriend <code or label>`, and `/volley friends`, which lists each friend with label and nickname, the standing, when last met, and "in the lobby" when the last poll saw them.
+* `/volley block`, `/volley block <code>`, `/volley unblock <code>`.
+* `/volley opponents`: the last ten opponents with the standing and the record.
+* `/volley stats`: as before, plus the record against people and the standing against the current or last opponent.
+* `/volley reset` stays the AI match's. Standings against people are never reset by one side alone.
+
+Every form answers in a short line or a few, as in version 1, with the court shown or hidden.
+
+### 13.14 Privacy, trust and abuse
+
+* What goes where (for the README). ntfy.sh sees the player's address and their lobby messages: the nickname, the public key, the mod's version, the mode, and the times one plays. The boxes it cannot open. The STUN servers see the address. The opponent sees the address. Nothing else leaves the machine, and with `online` off nothing at all.
+* The net helper is a process of its own that starts only with `online` on. The key helpers keep the promise of 6.12.
+* Everything from the lobby and the network is untrusted: lobby messages are read field by field and bounded in size, boxes must open, packets must carry the MAC, nicknames are cleaned (13.5), and input bytes are masked to their bits.
+* A changed mod can still play by script or leave when it is losing. Records are each player's own and there is no ranking, so nothing is won by it. Anyone can write junk into the public topic or flood it: readers drop the junk, and a flood stops matchmaking, not the game.
+* Blocking is per player and local. There is no report button, and nobody to report to.
+
+### 13.15 Ways not taken
+
+* **Other meeting points.** Nostr relays (WebSockets and secp256k1 signatures, neither within the mod's reach), public MQTT brokers (TCP or WebSockets), BitTorrent trackers and the DHT (binary protocols over UDP or WebSockets), Firebase or Supabase (accounts and keys of our own). ntfy.sh speaks plain HTTPS, which the mod reaches with `$.http.fetch` alone, in one implementation for every system.
+* **The net helper streaming the lobby** instead of the mod polling: faster, but HTTPS in two languages (and Python's certificate store on macOS) for a gain of seconds, while the player has the AI meanwhile.
+* **Rollback.** Smoother at a high ping, but it needs a second state, resimulation and a ball that visibly jumps when a guess was wrong. Lockstep comes first, and rollback can sit on the same input stream later.
+* **The court owning the online match.** A dialog and `[-]` unmount it (5.1 row 45), and the steps reach the hooks module first.
+* **A local port as the control channel.** Out of reach from WSL by default, and open to every process on the machine.
+* **One compiled helper for every system.** One implementation instead of two, but binaries nobody can read, one per system and processor, and the README's promise of readable helpers gone.
+* **Python on Windows too.** Windows ships no Python; PowerShell 5.1 is always there (section 4).
+* **Python reading the keys on macOS** (the route the user accepted for D22, as first worded): the net helper running `keys.js` as its child does the same with less, and play against the AI on macOS then needs no Python.

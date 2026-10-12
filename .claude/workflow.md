@@ -1,7 +1,7 @@
 # Workflow: Wobbly Volley
 
-* **Backlog:** `PLAN.md` section 9, milestones M0 to M11 in order, with M2b after M2. The first unticked one is next. A milestone that waits on another machine or person carries "waiting <on whom>" in its line and is skipped. Done mark: `[x]` and "done <date>" in the commit that finishes it.
-* **Binding:** `PLAN.md` sections 0 (rules), 3 (decisions, closed) and 6 (architecture). The API authority is `.claude-plugin/types/claude-code/index.d.ts`, which the engine lays at every load. Section 5 is the map.
+* **Backlog:** `PLAN.md` section 9, milestones M0 to M21 in order, with M2b after M2. M0 to M11 are version 1, M12 to M21 are online play, version 2 (`PLAN.md` section 13). The first unticked one is next. A milestone that waits on another machine or person carries "waiting <on whom>" in its line and is skipped. Done mark: `[x]` and "done <date>" in the commit that finishes it.
+* **Binding:** `PLAN.md` sections 0 (rules), 3 (decisions, closed) and 6 (architecture), and for online play section 13. The API authority is `.claude-plugin/types/claude-code/index.d.ts`, which the engine lays at every load. Section 5 is the map.
 * **Where results go:** prototype numbers into section 10, kit and API facts into section 5, deviations and findings with date and milestone into section 11.
 * **Checks before a tick:** `claude plugin validate .`, `claude plugin test .`, `npx -y -p typescript tsc -p .`.
 * **Laying the types without a session:** from any other folder, in PowerShell (Git Bash rewrites the slash command into a path), `claude -p "/volley" --plugin-dir C:\projects\ClaudeyVolley --no-session-persistence --setting-sources project`. It runs no model turn.
