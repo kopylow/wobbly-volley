@@ -1,0 +1,6 @@
+{
+  "name": "wobbly-volley",
+  "description": "Wobbly Volley, a volleyball game above the prompt while Claude works",
+  "owner": { "name": "Anton Kopylow" },
+  "plugins": [{ "name": "wobbly-volley", "source": "./" }]
+}

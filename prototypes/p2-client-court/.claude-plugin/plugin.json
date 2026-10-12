@@ -1,0 +1,6 @@
+{
+  "name": "volley-p2",
+  "version": "0.1.0",
+  "description": "Wobbly Volley prototype P2: a full size court drawn by a Client in the band, with draw rate and CPU measured",
+  "author": { "name": "Anton Kopylow" }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "wobbly-volley",
+  "displayName": "Wobbly Volley",
+  "version": "1.0.0",
+  "description": "A Blobby Volley style game in the band above the prompt while Claude works",
+  "author": { "name": "Anton Kopylow", "url": "https://github.com/kopylow" },
+  "homepage": "https://github.com/kopylow/wobbly-volley",
+  "repository": "https://github.com/kopylow/wobbly-volley",
+  "license": "MIT",
+  "keywords": ["game", "volleyball", "mod"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Show the court during long turns",
+      "description": "The court opens by itself a few seconds into a turn.",
+      "default": true
+    },
+    "delaySeconds": {
+      "type": "number",
+      "title": "Delay before the court opens",
+      "description": "Seconds into a turn before the court appears.",
+      "default": 5,
+      "min": 0,
+      "max": 60
+    },
+    "difficulty": {
+      "type": "string",
+      "title": "AI level",
+      "description": "How strong your opponent plays: Pudding (easy), Jelly (medium) or Gummy (hard).",
+      "default": "medium",
+      "options": ["easy", "medium", "hard"]
+    }
+  }
+}

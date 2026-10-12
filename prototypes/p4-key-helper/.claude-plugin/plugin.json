@@ -1,0 +1,6 @@
+{
+  "name": "volley-p4",
+  "version": "0.1.0",
+  "description": "Wobbly Volley prototype P4: the key state helper started through $.process.spawn, with its delays to the hooks module and to a Client measured",
+  "author": { "name": "Anton Kopylow" }
+}

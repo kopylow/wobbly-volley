@@ -1,0 +1,6 @@
+{
+  "name": "volley-p1",
+  "version": "0.1.0",
+  "description": "Wobbly Volley prototype P1: a band probe that logs what a Client in the band sees",
+  "author": { "name": "Anton Kopylow" }
+}
